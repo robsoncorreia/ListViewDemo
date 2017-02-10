@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace ListViewDemo
 {
-    class EmployeeList
+    public class EmployeeList
     {
         public Employee[] GetEmployees(int number)
         {

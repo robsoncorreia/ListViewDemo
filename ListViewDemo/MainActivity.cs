@@ -18,7 +18,7 @@ namespace ListViewDemo
             var employees = employeeList.GetEmployees(20);
             ListView lvEmployees = FindViewById<ListView>(Resource.Id.listView1);
 
-            ArrayAdapter<Employee> adapter = new ArrayAdapter<Employee>(this, Android.Resource.Layout.SimpleListItem1, employees);
+            EmployeeAdapter adapter = new EmployeeAdapter(employees);
             lvEmployees.Adapter = adapter;
         }
     }

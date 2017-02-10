@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace ListViewDemo
 {
-    class Employee
+    public class Employee
     {
         public override string ToString()
         {
