@@ -4,7 +4,7 @@ using Android.OS;
 
 namespace ListViewDemo
 {
-    [Activity(Label = "ListViewDemo", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "List View Demo", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
@@ -12,7 +12,14 @@ namespace ListViewDemo
             base.OnCreate(bundle);
 
             // Set our view from the "main" layout resource
-            // SetContentView (Resource.Layout.Main);
+            // 
+            SetContentView(Resource.Layout.Main);
+            EmployeeList employeeList = new EmployeeList();
+            var employees = employeeList.GetEmployees(20);
+            ListView lvEmployees = FindViewById<ListView>(Resource.Id.listView1);
+
+            ArrayAdapter<Employee> adapter = new ArrayAdapter<Employee>(this, Android.Resource.Layout.SimpleListItem1, employees);
+            lvEmployees.Adapter = adapter;
         }
     }
 }
